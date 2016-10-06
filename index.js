@@ -1,6 +1,6 @@
 var BB = require('bluebird');
 
-function recreateElementsScriptTags(elementInQuestion) {
+module.exports = function recreateElementsScriptTags(elementInQuestion) {
     // http://stackoverflow.com/questions/13390588/script-tag-create-with-innerhtml-of-a-div-doesnt-work
     return BB.all([].map.call(elementInQuestion.querySelectorAll('script'), function(scriptTag) {
         var newScriptElement = document.createElement('script');
